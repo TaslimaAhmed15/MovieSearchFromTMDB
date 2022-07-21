@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jRd-Td-3Yt">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search-->
+        <scene sceneID="sr4-v1-Huo">
+            <objects>
+                <viewController title="Search" id="jRd-Td-3Yt" customClass="SearchViewController" customModule="brainStationCodableWithMVVMtmdbProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nBa-06-s2j">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sVE-bx-KxX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="jRd-Td-3Yt" id="eT4-5q-LXM"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rhE-Ta-Yzj">
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="jRd-Td-3Yt" id="PuD-6Y-khg"/>
+                                    <outlet property="delegate" destination="jRd-Td-3Yt" id="u7S-R9-fDX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D3w-bj-sDB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sVE-bx-KxX" firstAttribute="leading" secondItem="D3w-bj-sDB" secondAttribute="leading" id="6BQ-ey-WD4"/>
+                            <constraint firstItem="rhE-Ta-Yzj" firstAttribute="leading" secondItem="D3w-bj-sDB" secondAttribute="leading" id="JPE-uA-eFP"/>
+                            <constraint firstItem="D3w-bj-sDB" firstAttribute="trailing" secondItem="sVE-bx-KxX" secondAttribute="trailing" id="YHZ-S3-FMX"/>
+                            <constraint firstItem="D3w-bj-sDB" firstAttribute="trailing" secondItem="rhE-Ta-Yzj" secondAttribute="trailing" id="hXA-CK-oS9"/>
+                            <constraint firstItem="sVE-bx-KxX" firstAttribute="top" secondItem="D3w-bj-sDB" secondAttribute="top" id="irr-pl-hjW"/>
+                            <constraint firstItem="rhE-Ta-Yzj" firstAttribute="top" secondItem="D3w-bj-sDB" secondAttribute="top" constant="56" id="lWq-b2-GAW"/>
+                            <constraint firstItem="D3w-bj-sDB" firstAttribute="bottom" secondItem="rhE-Ta-Yzj" secondAttribute="bottom" id="vKi-6Y-Eeo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search" id="N3y-lX-0W8">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="1zS-25-Vqc">
+                            <connections>
+                                <action selector="logoutTapped:" destination="jRd-Td-3Yt" id="sHg-Fw-HSF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="sVE-bx-KxX" id="iAH-BQ-DeB"/>
+                        <outlet property="tableView" destination="rhE-Ta-Yzj" id="aQX-SK-7we"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ebb-fa-u76" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="578" y="-1345"/>
+        </scene>
+    </scenes>
+</document>
